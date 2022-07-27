@@ -1,0 +1,92 @@
+{
+    "contacts":[
+        {
+           "id":"AA@#$123",
+           "name":"kala",
+           "photo":"https://icon-library.com/images/users-icon-png/users-icon-png-15.jpg", 
+           "mobile":"9966557765" ,
+           "email":"kala@gmail.com",
+           "company":"HCL Technologies",
+           "title":"Software Engineer",
+           "group":"1"
+        },
+        {
+            "id":"AA@#$234",
+            "name":"Ravi",
+            "photo":"https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-add-user-icon-png-image_4101807.jpg", 
+            "mobile":"9966557788" ,
+            "email":"ravi@gmail.com",
+            "company":"YouTube",
+            "title":"youtuber",
+            "group":"2"
+         }, 
+         {
+            "id":"AA@#$345",
+            "name":"Raju",
+            "photo":"https://png.pngtree.com/png-clipart/20190705/original/pngtree-user-icon-vector-illustration-in-line-style-for-any-purpose-png-image_4246121.jpg", 
+            "mobile":"9966567854" ,
+            "email":"raju@gmail.com",
+            "company":"Friend",
+            "title":"freelancer",
+            "groupId":"6"
+         }, 
+         {
+            "id":"AA@#$456",
+            "name":"siva",
+            "photo":"https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-add-user-icon-png-image_4101807.jpg", 
+            "mobile":"9966557901" ,
+            "email":"siva@gmail.com",
+            "company":"Service",
+            "title":"electrician",
+            "group":"4"
+         },
+         {
+            "id":"AA@#$567",
+            "name":"kiran",
+            "photo":"https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-add-user-icon-png-image_4101807.jpg", 
+            "mobile":"9966557765" ,
+            "email":"kiran@gmail.com",
+            "company":"UiBrains",
+            "title":"Software Engineer",
+            "group":"3"
+         },
+         {
+            "id":"AA@#$678",
+            "name":"jaya",
+            "photo":"https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-add-user-icon-png-image_4101807.jpg", 
+            "mobile":"9966557754" ,
+            "email":"jaya@gmail.com",
+            "company":"UiBrains",
+            "title":"Software Engineer",
+            "group":"5"
+         }
+  
+  
+    ],
+    "groups":[
+        {
+            "id":"1",
+            "name":"Colleague"
+        },
+        {
+            "id":"2",
+            "name":"Friend"
+        },
+        {
+            "id":"3",
+            "name":"Fimily"
+        },
+        {
+            "id":"4",
+            "name":"Service"
+        },
+        {
+            "id":"5",
+            "name":"Community"
+        },
+        {
+            "id":"6",
+            "name":"Social"
+        }
+    ]
+}

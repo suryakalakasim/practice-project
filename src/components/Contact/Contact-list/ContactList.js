@@ -9,7 +9,7 @@ let ContactList = () => {
                         <div className="row">
                             <div className="col">
                                 <p className="h3">Contact Manager
-                                    <Link to={'/contacts/add'} className="btn btn-primary">
+                                    <Link to={'/contacts/add'} className="btn btn-primary ms-2">
                                         <i className="fa fa-plus-circle me-2" /> New</Link>
                                 </p>
                                 <p className="fst-italic">Customer Support Software That Brings Happier Clients  Better Customer Service. Improve Response Times.</p>
@@ -40,22 +40,71 @@ let ContactList = () => {
                         <div className="col-md-6">
                             <div className="card">
                                 <div className="card-body">
-                                    <div className="row">
+                                    <div className="row align-items-center d-flex justify-content-around">
                                         <div className="col-md-4">
                                             <img src="https://icon-library.com/images/users-icon-png/users-icon-png-15.jpg" alt="" className="contact-img" />
-                                        </div>
                                         </div>
                                         <div className="col-md-7">
                                             <ul className="list-group">
                                                 <li className="list-group-item list-group-item-action">
                                                     Name:<span className="fw-bold">Kala</span>
                                                 </li>
+                                                <li className="list-group-item list-group-item-action">
+                                                    Mobile:<span className="fw-bold">9988964568</span>
+                                                </li>
+                                                <li className="list-group-item list-group-item-action">
+                                                    Email:<span className="fw-bold">kala@gmail.com</span>
+                                                </li>
                                             </ul>
                                         </div>
-                                        <div className="col-md-1">
-
+                                        <div className="col-md-1 d-flex flex-column align-items-center">
+                                         <Link to={`/contacts/view/:contactId`} className="btn btn-warning my-1">
+                                             <i className="fa fa-eye"/>
+                                         </Link>
+                                         <Link to={`/contacts/edit/:contactId`} className="btn btn-primary my-1">
+                                             <i className="fa fa-pen"/>
+                                         </Link>
+                                         <button className="btn btn-danger my-1">
+                                             <i className="fa fa-trash"/>
+                                         </button>
                                         </div>
-                                   
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="card">
+                                <div className="card-body">
+                                    <div className="row align-items-center d-flex justify-content-around">
+                                        <div className="col-md-4">
+                                            <img src="https://icon-library.com/images/users-icon-png/users-icon-png-15.jpg" alt="" className="contact-img" />
+                                        </div>
+                                        <div className="col-md-7">
+                                            <ul className="list-group">
+                                                <li className="list-group-item list-group-item-action">
+                                                    Name:<span className="fw-bold">Kala</span>
+                                                </li>
+                                                <li className="list-group-item list-group-item-action">
+                                                    Mobile:<span className="fw-bold">9988964568</span>
+                                                </li>
+                                                <li className="list-group-item list-group-item-action">
+                                                    Email:<span className="fw-bold">kala@gmail.com</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-md-1 d-flex flex-column align-items-center">
+                                         <Link to={`/contacts/view/:contactId`} className="btn btn-warning my-1">
+                                             <i className="fa fa-eye"/>
+                                         </Link>
+                                         <Link to={`/contacts/edit/:contactId`} className="btn btn-primary my-1">
+                                             <i className="fa fa-pen"/>
+                                         </Link>
+                                         <button className="btn btn-danger my-1">
+                                             <i className="fa fa-trash"/>
+                                         </button>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
