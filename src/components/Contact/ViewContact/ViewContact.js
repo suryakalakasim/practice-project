@@ -1,8 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { ContactService } from "../../../services/ContactService";
+import Spinner from "../../Spinner/Spinner";
 let ViewContact=()=>{
+    let {contactId}=useParams();
+    let [state,setState]=useState({
+      loading:false,
+      contact:{},
+      errorMessage:'',
+      group:{}
+    });
+    useEffect(()=> async()=>{
+  try{
+      setState({...state,loading:true})
+     let response= await ContactService.getContact(contactId)
+     //let groupResponse = await ContactService.
+     //console.log("viewResponse",response.data)
+     setState({
+         loading:false,
+         contact:response.data,
+     })
+  }
+  catch(error){
+     setState({
+         ...state,
+         loading:false,
+         errorMessage:error.message,
+         
+     });
+  }
+    },[contactId]);
+    let{loading,contact,errorMessage}=state;
+
     return(
    <React.Fragment>
+       
      <section className="view-contact-intro">
          <div className="container">
              <div className="row">
@@ -13,31 +45,34 @@ let ViewContact=()=>{
              </div>
          </div>
          </section>
-         <section className="view-contact mt-3">
+         {loading?<Spinner/>:<React.Fragment>
+          {
+              Object.keys(contact).length>0 &&
+              <section className="view-contact mt-3">
              <div className="container">
                  <div className="row align-item-center">
                      <div className="col-md-4">
-                      <img src="https://icon-library.com/images/users-icon-png/users-icon-png-15.jpg" alt="" className="contact-img"/>
+                      <img src={contact.photo} alt="" className="contact-img"/>
                      </div>
                      <div className="col-md-8">
                      <ul className="list-group">
                                                 <li className="list-group-item list-group-item-action">
-                                                    Name:<span className="fw-bold">Kala</span>
+                                                    Name:<span className="fw-bold">{contact.name}</span>
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
-                                                    Mobile:<span className="fw-bold">9988964568</span>
+                                                    Mobile:<span className="fw-bold">{contact.mobile}</span>
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
-                                                    Email:<span className="fw-bold">kala@gmail.com</span>
+                                                    Email:<span className="fw-bold">{contact.email}</span>
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
-                                                    Company:<span className="fw-bold">HCL</span>
+                                                    Company:<span className="fw-bold">{contact.company}</span>
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
-                                                    Title:<span className="fw-bold">kala@gmail.com</span>
+                                                    Title:<span className="fw-bold">{contact.title}</span>
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
-                                                    Group:<span className="fw-bold">kala@gmail.com</span>
+                                                    Group:<span className="fw-bold">{contact.group}</span>
                                                 </li>
                                             </ul>
                      </div>
@@ -48,7 +83,11 @@ let ViewContact=()=>{
                      </div>
                  </div>
              </div>
-             </section>      
+             </section> 
+          }
+
+         </React.Fragment> }
+              
    </React.Fragment>
     )
 };

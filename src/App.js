@@ -7,10 +7,12 @@ import AddContact from "./components/Contact/AddContact/AddContact";
 import ViewContact from "./components/Contact/ViewContact/ViewContact";
 import EditContact from "./components/Contact/EditContact/EditContact";
 
+
 let App = () => {
 
   return (
     <React.Fragment>
+      
       <NavBar />
       <Routes>
         <Route path={'/'} element={<Navigate to={'/contacts/list'}/>}/>
