@@ -14,11 +14,12 @@ let ViewContact=()=>{
   try{
       setState({...state,loading:true})
      let response= await ContactService.getContact(contactId)
-     //let groupResponse = await ContactService.
+     let groupResponse = await ContactService.getGroup(response.data)
      //console.log("viewResponse",response.data)
      setState({
          loading:false,
          contact:response.data,
+         group:groupResponse.data
      })
   }
   catch(error){
@@ -30,7 +31,7 @@ let ViewContact=()=>{
      });
   }
     },[contactId]);
-    let{loading,contact,errorMessage}=state;
+    let{loading,contact,errorMessage,group}=state;
 
     return(
    <React.Fragment>
@@ -47,7 +48,7 @@ let ViewContact=()=>{
          </section>
          {loading?<Spinner/>:<React.Fragment>
           {
-              Object.keys(contact).length>0 &&
+              Object.keys(contact).length>0 && Object.keys(group).length>0&&
               <section className="view-contact mt-3">
              <div className="container">
                  <div className="row align-item-center">
@@ -72,7 +73,7 @@ let ViewContact=()=>{
                                                     Title:<span className="fw-bold">{contact.title}</span>
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
-                                                    Group:<span className="fw-bold">{contact.group}</span>
+                                                    Group:<span className="fw-bold">{group.name}</span>
                                                 </li>
                                             </ul>
                      </div>
