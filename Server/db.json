@@ -4,26 +4,16 @@
       "id": "3A@1$123",
       "name": "kala",
       "photo": "https://smallimg.pngkey.com/png/small/14-144181_female-user-icon-clip-art-female-user-icon.png",
-      "mobile": "9966557765",
-      "email": "kala@gmail.com",
+      "mobile": "9966557888",
+      "email": "chitra@gmail.com",
       "company": "HCL Technologies",
       "title": "Software Engineer",
-      "groupId": "1"
-    },
-    {
-      "id": "cB*2h234",
-      "name": "Ravi",
-      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB8joIXJgJA6TKhfyz6Af9OE1pjFMAAsq_xA&usqp=CAU",
-      "mobile": "9966557788",
-      "email": "ravi@gmail.com",
-      "company": "YouTube",
-      "title": "youtuber",
       "groupId": "2"
     },
     {
       "id": "hC&8o345",
       "name": "Raju",
-      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOi7SeW_B1tZF-k3pRDdKmXDU49SrrapjQIA&usqp=CAU",
+      "photo": "https://web.vawsum.com/assets/images/man-icon.png",
       "mobile": "9966567854",
       "email": "raju@gmail.com",
       "company": "Friend",
@@ -41,24 +31,14 @@
       "groupId": "4"
     },
     {
-      "id": "jE^@$367",
-      "name": "kiran",
-      "photo": "https://icon-library.com/images/username-icon/username-icon-6.jpg",
-      "mobile": "9966557765",
-      "email": "kiran@gmail.com",
-      "company": "UiBrains",
-      "title": "Software Engineer",
-      "groupId": "3"
-    },
-    {
       "id": "sF@*!478",
       "name": "jaya",
-      "photo": "https://icon-library.com/images/users-icon-png/users-icon-png-15.jpg",
+      "photo": "https://png.pngitem.com/pimgs/s/80-800194_transparent-users-icon-png-flat-user-icon-png.png",
       "mobile": "9966557754",
       "email": "jaya@gmail.com",
       "company": "UiBrains",
       "title": "Software Engineer",
-      "groupId": "5"
+      "groupId": "3"
     },
     {
       "name": "nani",
