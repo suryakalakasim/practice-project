@@ -4,9 +4,13 @@ import { ContactService } from "../../../services/ContactService";
 import Spinner from "../../Spinner/Spinner";
 
 let ContactList = () => {
+    let [query,setQuery]=useState({
+text:""
+    })
     let [state, setState] = useState({
         loading: false,
         contacts: [],
+        filteredContacts:[],
         errorMessage: ""
     });
     useEffect(() => async () => {
@@ -17,7 +21,8 @@ let ContactList = () => {
             setState({
                 ...state,
                 loading: false,
-                contacts: response.data
+                contacts: response.data,
+                filteredContacts:response.data
             })
         }
         catch (error) {
@@ -28,7 +33,42 @@ let ContactList = () => {
             })
         }
     }, []);
-    let { loading, contacts, errorMessage } = state;
+    let clickDelete= async(contactId)=>{
+   try{
+  let response= await ContactService.deleteContact(contactId);
+  if(response){
+    setState({ ...state, loading: true });
+    const response = await ContactService.getALLContacts();
+    // console.log("response>>.",response.data)
+    setState({
+        ...state,
+        loading: false,
+        contacts: response.data,
+        filteredContacts:response.data
+    })
+  }
+    }
+   catch(error){
+    setState({
+        ...state,
+        loading: false,
+        errorMessage: error.message
+    })
+   }
+    }
+    let searchContacts=(event)=>{
+      setQuery({...query,
+       text:event.target.value
+    })
+    let theContacts= state.contacts.filter(contact=>{
+        return contact.name.toLowerCase().includes(event.target.value.toLowerCase())
+    });
+    setState({
+        ...state,
+        filteredContacts:theContacts
+    })
+    }
+    let { loading, contacts,filteredContacts, errorMessage } = state;
     return (
         <React.Fragment>
             <section className="contact-search p-3">
@@ -48,7 +88,7 @@ let ContactList = () => {
                                 <form className="row">
                                     <div className="col">
                                         <div className="mb-2">
-                                            <input type="text" className="form-control" placeholder="Search Names" />
+                                            <input type="text" name="taxt" value={query.text} onChange={searchContacts} className="form-control" placeholder="Search Names" />
                                         </div>
                                     </div>
                                     <div className="col">
@@ -68,8 +108,8 @@ let ContactList = () => {
                         <div className="container">
                             <div className="row">
                                 {
-                                    contacts.length > 0 &&
-                                    contacts.map(contact => {
+                                    filteredContacts.length > 0 &&
+                                    filteredContacts.map(contact => {
                                         return (
                                             <div className="col-md-6" key={contact.id}>
                                                 <div className="card my-2">
@@ -98,7 +138,7 @@ let ContactList = () => {
                                                                 <Link to={`/contacts/edit/${contact.id}`} className="btn btn-primary my-1">
                                                                     <i className="fa fa-pen" />
                                                                 </Link>
-                                                                <button className="btn btn-danger my-1">
+                                                                <button className="btn btn-danger my-1" onClick={()=>clickDelete(contact.id)}>
                                                                     <i className="fa fa-trash" />
                                                                 </button>
                                                             </div>
