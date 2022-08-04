@@ -4,6 +4,8 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { store } from './Redux/redux/store';
 /* Fontawesome icons */
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 /*Bootstrap 5.1 */
@@ -13,7 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 <BrowserRouter>
+<Provider store={store}>
 <App/>
+</Provider>
 </BrowserRouter>
     
   </React.StrictMode>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {Link,useNavigate} from 'react-router-dom';
 import { ContactService } from "../../../services/ContactService";
-let AddContact=()=>{
-    let navigate=useNavigate();
-    let[state,setState]=useState({
+const AddContact=()=>{
+    const navigate=useNavigate();
+    const [state,setState]=useState({
         loading:false,
         contact:{
           name:'',
@@ -17,7 +17,7 @@ let AddContact=()=>{
         groups:[],
         errorMessage:""
     });
-    let updateInput=(event)=>{
+    const updateInput=(event)=>{
         setState({
             ...state,
         contact:{
@@ -29,7 +29,7 @@ let AddContact=()=>{
     useEffect(()=> async()=>{
    try{
        setState({...state,loading:true});
-    let response= await ContactService.getGroups()
+    const response= await ContactService.getGroups()
    // console.log("addcontactResponce",response.data)
    setState({...state,
        loading:false,
@@ -41,10 +41,10 @@ let AddContact=()=>{
 
    }
     },[])
-    let submitForm= async(e)=>{
+    const submitForm= async(e)=>{
         e.preventDefault();
    try{
-   let response= await ContactService.createContact(state.contact)
+   const response= await ContactService.createContact(state.contact)
    if(response){
    navigate('/contacts/list',{replace:true})
    }
@@ -54,7 +54,7 @@ let AddContact=()=>{
     navigate('/contacts/add',{replace:false})
    }
     }
-    let {loading,contact,groups,errorMessage}=state;
+    const {loading,contact,groups,errorMessage}=state;
     return(
    <React.Fragment>
       <section className="add-contact p-3">

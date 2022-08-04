@@ -6,6 +6,7 @@ import ContactList from "./components/Contact/Contact-list/ContactList";
 import AddContact from "./components/Contact/AddContact/AddContact";
 import ViewContact from "./components/Contact/ViewContact/ViewContact";
 import EditContact from "./components/Contact/EditContact/EditContact";
+import Contacts from "./Redux/Contact/Contact-list/ContactList";
 
 
 let App = () => {
@@ -14,13 +15,14 @@ let App = () => {
     <React.Fragment>
       
       <NavBar />
-      <Routes>
+      <Contacts/>
+      {/* <Routes>
         <Route path={'/'} element={<Navigate to={'/contacts/list'}/>}/>
         <Route path={'/contacts/list'} element={<ContactList/>}/>
         <Route path={'/contacts/add'} element={<AddContact/>}/>
         <Route path={'/contacts/view/:contactId'} element={<ViewContact/>}/>
         <Route path={'/contacts/edit/:contactId'} element={<EditContact/>}/>
-      </Routes>
+      </Routes> */}
     </React.Fragment>
   );
 }

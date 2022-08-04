@@ -1,12 +1,10 @@
-import React from "react";
+import {memo} from "react";
  import spinnerImg from '../../imeags/spinner/Loading_icon.gif';
-let Spinner=()=>{
+const Spinner=()=>{
     return(
-        <React.Fragment>
         <div>
-        <img src={spinnerImg} alt="" className="d-block m-auto " style={{width:"200px"}}/>                    
+        <img src={spinnerImg} alt="image" className="d-block m-auto " style={{width:"200px"}}/>                    
         </div>
-        </React.Fragment>
     )
 }
-export default Spinner;
+export default memo(Spinner);
